@@ -84,7 +84,8 @@ const calcFinalPrice = (cartTotal, couponValue, tax) => {
     TEXT ANSWER HERE
 1. ID because it is an easier way to identify a customer, it is a integer
 2. Name because each customer has a unique name and it is a string so you can search customer using characters
-3. Phone number because 
+3. Phone number because each customer will have a unique phone number that they will always remember! This is a string I heard something about using an integer to identify phone numbers was not good.
+4. Email because each customer will have a unique one. This can be used to contact customers on an email list. It is a string because it is mainly characters.
 
 */
 

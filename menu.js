@@ -52,7 +52,7 @@ const pizza = {
 
 //CODE HERE
 
-console.log(pizza.popularity)
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -63,7 +63,7 @@ console.log(pizza.popularity)
 
 //CODE HERE
 
-
+// console.log(pizza.tags[1])
 
 
 /*
@@ -75,7 +75,9 @@ console.log(pizza.popularity)
 
 //CODE HERE
 
-pizza.price = 5;
+const {price} = pizza;
+
+// console.log(price);
 
 /*
     Fourth, and last, destructure the category
@@ -86,7 +88,9 @@ pizza.price = 5;
 
 //CODE HERE
 
-pizza.category = 'Not Pizza';
+const {category} = pizza;
+
+// console.log(category);
 
 
 //////////////////PROBLEM 3////////////////////
@@ -161,20 +165,11 @@ const foodArr = [
 
 //CODE HERE
 
-const getFoodByGlutenFreeTag = (foodObj, currentIndex, array) => {
-    const isTagIncluded = foodObj.tags.includes('Gluten-Free')
-
-    return isTagIncluded
-
+function filterByTag(tag) {
+    return foodArr.filter(food => food.tags.includes(tag));
 }
 
-const filteredFood = foodArr.filter(getFoodByGlutenFreeTag)
-
-// console.log(filteredFood)
-
-// const filteredFood = foodArr.filter(/* CALLBACK HERE */)
-
-
+// console.log(filterByTag('kids'))
 
 //////////////////PROBLEM 5////////////////////
 /* 
@@ -217,7 +212,17 @@ const filteredFood = foodArr.filter(getFoodByGlutenFreeTag)
 
 //CODE HERE
 
-
+function filterByProperty(property, number, type) {
+    let filteredArr = [];
+  
+    if (type === 'above') {
+      filteredArr = foodArr.filter(food => food[property] > number);
+    } else if (type === 'below') {
+      filteredArr = foodArr.filter(food => food[property] < number);
+    }
+  
+    return filteredArr;
+  }
 
 /*
     Invoke the `filterByProperty` function passing
@@ -228,5 +233,6 @@ const filteredFood = foodArr.filter(getFoodByGlutenFreeTag)
 
 //CODE HERE
 
-
+const above6Rating = filterByProperty('rating', 8, 'above');
+console.log(above6Rating);
 
